@@ -4,6 +4,30 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageId>Play.Common</PackageId>
+    <Version>1.0.0</Version>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <PackageTags>play, microservice, common, shared, library</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackRelease>true</PackRelease>
+    <Title>Play.Common.Domain, desenvolvida por Bigai Software.</Title>
+    <Authors>Marcos Cruz</Authors>
+    <Company>Bigai Software, Santo André, SP, Brazil.</Company>
+    <Description>Play.Common é uma biblioteca de código compartilhado nuget, escrita em dotnet core 8.0, que fornece suporte as operações de microserviços da aplicação Play.</Description>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/marcos-cruz/Play.Common.git</RepositoryUrl>
+    <CurrentYear>$([System.DateTime]::Now.ToString(yyyy))</CurrentYear>
+    <Copyright>Copyright ©2021-$(CurrentYear) Bigai Software, All rights reserved.</Copyright>
+    <NoWarn>$(NoWarn);1591</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Pack>true</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
