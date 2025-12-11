@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "humao.rest-client",
+        "k--kato.docomment",
+        "kreativ-software.csharpextensions",
+        "ms-dotnettools.csdevkit",
+        "pkief.material-icon-theme",
+        "sonarsource.sonarlint-vscode",
+        "yzhang.markdown-all-in-one",
+        "mongodb.mongodb-vscode",
+    ]
+}

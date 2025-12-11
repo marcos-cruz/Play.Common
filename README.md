@@ -1,6 +1,6 @@
 # Play.Common
 
-Play.Catalog é um microserviço escrito em dotnet core 8.0 que fornece suporte para operações de crud em um banco de dados MongoDb.
+Play.Common é uma biblioteca de código compartilhado nuget, escrita em dotnet core 8.0, que fornece suporte as operações de microserviços da aplicação Play. 
 
 ## Ambiente de Desenvolvimento
 
