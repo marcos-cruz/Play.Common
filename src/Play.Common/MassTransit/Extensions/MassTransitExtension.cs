@@ -1,11 +1,11 @@
-using System.Reflection;
-
 using MassTransit;
 
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using Play.Common.Settings;
+
+using System.Reflection;
 
 namespace Play.Common.MassTransit.Extensions
 {
@@ -50,6 +50,10 @@ namespace Play.Common.MassTransit.Extensions
 
                     configurator.Host(rabbitMQSettings.Host);
                     configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
+                    configurator.UseMessageRetry(retryConfigurator =>
+                    {
+                        retryConfigurator.Interval(3, TimeSpan.FromSeconds(5));
+                    });
                 });
             });
 
