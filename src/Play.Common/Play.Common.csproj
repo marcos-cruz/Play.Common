@@ -6,9 +6,9 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>Play.Common</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.0.1</Version>
     <EnablePackageValidation>true</EnablePackageValidation>
-    <PackageTags>play, microservice, common, shared, library</PackageTags>
+    <PackageTags>play, microservice, common, shared, library, MongoDb, RabbitMQ</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackRelease>true</PackRelease>
     <Title>Play.Common.Domain, desenvolvida por Bigai Software.</Title>
@@ -31,6 +31,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit.AspNetCore" Version="7.3.1" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.5.7" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.1" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.1" />
