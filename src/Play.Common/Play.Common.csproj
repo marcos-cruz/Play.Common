@@ -6,9 +6,9 @@
     <Nullable>enable</Nullable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>Play.Common</PackageId>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <EnablePackageValidation>true</EnablePackageValidation>
-    <PackageTags>play, microservice, common, shared, library, MongoDb, RabbitMQ</PackageTags>
+    <PackageTags>play, microservice, common, shared, library, MongoDb, RabbitMQ, Identity, Duende, IdentityServer, JWT, Bearer</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackRelease>true</PackRelease>
     <Title>Play.Common.Domain, desenvolvida por Bigai Software.</Title>
