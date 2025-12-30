@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Serializers;
 using MongoDB.Driver;
 
 using Play.Common.Entities;
-using Play.Common.Settings;
+using Play.Common.Settings.Extensions;
 
 namespace Play.Common.Repositories.Extensions
 {
@@ -33,17 +33,9 @@ namespace Play.Common.Repositories.Extensions
                     throw new InvalidOperationException($"No '{nameof(IConfiguration)}' service found in service provider.");
                 }
 
-                var serviceSettings = configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
-                if (serviceSettings is null)
-                {
-                    throw new InvalidOperationException($"No '{nameof(ServiceSettings)}' section found in configuration.");
-                }
+                var serviceSettings = configuration.GetServiceSettings();
 
-                var mongoDbSettings = configuration.GetSection(nameof(MongoDbSettings)).Get<MongoDbSettings>();
-                if (mongoDbSettings is null)
-                {
-                    throw new InvalidOperationException($"No '{nameof(MongoDbSettings)}' section found in configuration.");
-                }
+                var mongoDbSettings = configuration.GetMongoDbSettings();
 
                 var mongoClient = new MongoClient(mongoDbSettings.ConnectionString);
 

@@ -3,7 +3,7 @@ using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-using Play.Common.Settings;
+using Play.Common.Settings.Extensions;
 
 using System.Reflection;
 
@@ -36,17 +36,9 @@ namespace Play.Common.MassTransit.Extensions
                         throw new InvalidOperationException($"No '{nameof(IConfiguration)}' service found in service provider.");
                     }
 
-                    var rabbitMQSettings = configuration.GetSection(nameof(RabbitMQSettings)).Get<RabbitMQSettings>();
-                    if (rabbitMQSettings is null)
-                    {
-                        throw new InvalidOperationException($"No '{nameof(RabbitMQSettings)}' section found in configuration.");
-                    }
+                    var rabbitMQSettings = configuration.GetRabbitMQSettings();
 
-                    var serviceSettings = configuration.GetSection(nameof(ServiceSettings)).Get<ServiceSettings>();
-                    if (serviceSettings is null)
-                    {
-                        throw new InvalidOperationException($"No '{nameof(ServiceSettings)}' section found in configuration.");
-                    }
+                    var serviceSettings = configuration.GetServiceSettings();
 
                     configurator.Host(rabbitMQSettings.Host);
                     configurator.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter(serviceSettings.ServiceName, false));
